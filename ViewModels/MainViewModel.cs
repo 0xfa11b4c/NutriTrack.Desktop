@@ -35,6 +35,7 @@ namespace NutriTrack.Desktop.ViewModels
                 !int.TryParse(AgeInput, out int age) ||
                 !double.TryParse(BodyFatInput, out double fatPercent))
             {
+                SetError();
                 return;
             }
 
@@ -74,6 +75,10 @@ namespace NutriTrack.Desktop.ViewModels
             ProteinText = $"{protein:F0} g";
             FatText = $"{fat:F0} g";
             CarbsText = $"{carbs:F0} g";
+        }
+        private void SetError()
+        {
+            CaloriesText = ProteinText = FatText = CarbsText = "Ошибка";
         }
     }
 }
