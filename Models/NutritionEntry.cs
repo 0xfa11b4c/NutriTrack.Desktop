@@ -10,7 +10,7 @@
         public string Gender { get; set; } = "Male";
         public string Goal { get; set; } = "Maintain";
         public string Activity { get; set; } = "Moderate";
-
+        
         public double Calories { get; set; }
         public double Protein { get; set; }
         public double Fat { get; set; }
