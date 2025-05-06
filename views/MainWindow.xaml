@@ -1,0 +1,110 @@
+﻿<Window x:Class="NutriTrack.Desktop.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:NutriTrack.Desktop.ViewModels"
+        Title="NutriTrack"
+        WindowStartupLocation="CenterScreen"
+        Height="700"
+        Width="420">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="White" Padding="20" CornerRadius="15" BorderBrush="Gray" BorderThickness="1">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Center" Width="360">
+
+                <Button Content="✕"
+                        Background="LightGray"
+                        Foreground="Black"
+                        FontWeight="Bold"
+                        Width="32" Height="32"
+                        FontSize="14"
+                        BorderThickness="0"
+                        HorizontalAlignment="Right"/>
+
+                <TextBlock Text="NutriTrack"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="DarkSlateGray"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Weight (kg)" FontSize="14"/>
+                        <TextBox Width="100"/>
+                    </StackPanel>
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Height (cm)" FontSize="14"/>
+                        <TextBox Width="100"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Age" FontSize="14"/>
+                        <TextBox Width="100"/>
+                    </StackPanel>
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Body Fat (%)" FontSize="14"/>
+                        <TextBox Width="100"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Gender" FontSize="14"/>
+                        <ComboBox Width="110">
+                            <ComboBoxItem Content="Male"/>
+                            <ComboBoxItem Content="Female"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="6">
+                        <TextBlock Text="Goal" FontSize="14"/>
+                        <ComboBox Width="110">
+                            <ComboBoxItem Content="Cut"/>
+                            <ComboBoxItem Content="Maintain"/>
+                            <ComboBoxItem Content="Bulk"/>
+                        </ComboBox>
+                    </StackPanel>
+                </WrapPanel>
+
+                <TextBlock Text="Activity Level" Margin="0,10,0,5" HorizontalAlignment="Center"/>
+                <ComboBox Width="250" Margin="0,0,0,10" HorizontalAlignment="Center">
+                    <ComboBoxItem Content="Low"/>
+                    <ComboBoxItem Content="Light"/>
+                    <ComboBoxItem Content="Moderate"/>
+                    <ComboBoxItem Content="High"/>
+                    <ComboBoxItem Content="Very High"/>
+                </ComboBox>
+
+                <Button Content="Calculate"
+                        Width="200" Height="40"
+                        Margin="0,10"
+                        />
+
+                <TextBlock Text="Macronutrients" FontSize="18" FontWeight="SemiBold"
+                           Foreground="DarkSlateGray" HorizontalAlignment="Center" Margin="20,20,0,10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                        <TextBlock Text="--" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                        <TextBlock Text="--" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="5">
+                        <TextBlock Text="--" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock Text="Calories" FontSize="18" FontWeight="SemiBold"
+                           Foreground="DarkSlateGray" HorizontalAlignment="Center" Margin="20,20,0,10"/>
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" HorizontalAlignment="Center">
+                    <TextBlock Text="--" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>
