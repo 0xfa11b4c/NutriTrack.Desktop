@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using NutriTrack.Desktop.Models;
 using NutriTrack.Desktop.Services;
-using System;
 using System.Windows.Input;
 
 namespace NutriTrack.Desktop.ViewModels
