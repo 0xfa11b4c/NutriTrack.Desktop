@@ -1,27 +1,27 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NutriTrack.Desktop.Models;
-using System;
-using System.Windows.Input;
+using NutriTrack.Desktop.Services;
 
 namespace NutriTrack.Desktop.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        [ObservableProperty] private string weightInput = "";
-        [ObservableProperty] private string heightInput = "";
-        [ObservableProperty] private string ageInput = "";
-        [ObservableProperty] private string bodyFatInput = "";
+        [ObservableProperty] private string _weightInput = "";
+        [ObservableProperty] private string _heightInput = "";
+        [ObservableProperty] private string _ageInput = "";
+        [ObservableProperty] private string _bodyFatInput = "";
 
-        [ObservableProperty] private string gender = "Male";
-        [ObservableProperty] private string goal = "Maintain";
-        [ObservableProperty] private string activityLevel = "Moderate";
+        [ObservableProperty] private string _gender = "Male";
+        [ObservableProperty] private string _goal = "Maintain";
+        [ObservableProperty] private string _activityLevel = "Moderate";
 
-        [ObservableProperty] private string caloriesText = "--";
-        [ObservableProperty] private string proteinText = "--";
-        [ObservableProperty] private string fatText = "--";
-        [ObservableProperty] private string carbsText = "--";
-        [ObservableProperty] private string normalWeightText = "--";
+        [ObservableProperty] private string _caloriesText = "--";
+        [ObservableProperty] private string _proteinText = "--";
+        [ObservableProperty] private string _fatText = "--";
+        [ObservableProperty] private string _carbsText = "--";
+        [ObservableProperty] private string _normalWeightText = "--";
 
         public ICommand CalculateCommand { get; }
 
@@ -41,52 +41,34 @@ namespace NutriTrack.Desktop.ViewModels
                 return;
             }
 
-            double leanMass = weight * (1 - fatPercent / 100);
-
-            double bmr = Gender == "Female"
-                ? 10 * weight + 6.25 * height - 5 * age - 161
-                : 10 * weight + 6.25 * height - 5 * age + 5;
-
-            double activity = ActivityLevel switch
+            var input = new NutritionEntry
             {
-                "Low" => 1.2,
-                "Light" => 1.375,
-                "Moderate" => 1.55,
-                "High" => 1.725,
-                "Very High" => 1.9,
-                _ => 1.55
+                Weight = weight,
+                Height = height,
+                Age = age,
+                BodyFat = fatPercent,
+                Gender = Gender,
+                Goal = Goal,
+                Activity = ActivityLevel
             };
 
-            double tdee = bmr * activity;
-
-            tdee *= Goal switch
-            {
-                "Cut" => 0.8,
-                "Bulk" => 1.15,
-                _ => 1.0
-            };
-
-            double protein = leanMass * 2.2;
-            double fat = leanMass * 0.8;
-            double proteinKcal = protein * 4;
-            double fatKcal = fat * 9;
-            double carbsKcal = tdee - (proteinKcal + fatKcal);
-            double carbs = carbsKcal > 0 ? carbsKcal / 4 : 0;
+            var service = new NutritionService();
+            var result = service.Calculate(input);
 
             double normalWeight = Gender == "Female"
                 ? (height - 100) * 0.85
                 : (height - 100) * 0.9;
 
-            CaloriesText = $"{tdee:F0} kcal";
-            ProteinText = $"{protein:F0} g";
-            FatText = $"{fat:F0} g";
-            CarbsText = $"{carbs:F0} g";
+            CaloriesText = $"{result.Calories:F0} kcal";
+            ProteinText = $"{result.Protein:F0} g";
+            FatText = $"{result.Fat:F0} g";
+            CarbsText = $"{result.Carbs:F0} g";
             NormalWeightText = $"{normalWeight:F1} kg";
         }
 
         private void SetError()
         {
-            CaloriesText = ProteinText = FatText = CarbsText = NormalWeightText = "Ошибка";
+            CaloriesText = ProteinText = FatText = CarbsText = NormalWeightText = "Error";
         }
     }
 }
