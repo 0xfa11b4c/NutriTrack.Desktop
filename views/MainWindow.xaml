@@ -93,6 +93,7 @@
                                 <TextBlock Text="Goal" Style="{StaticResource InputLabel}"/>
                                 <ComboBox SelectedValue="{Binding Goal}" SelectedValuePath="Content">
                                     <ComboBoxItem Content="Cut"/>
+                                    <ComboBoxItem Content="Dry"/>
                                     <ComboBoxItem Content="Maintain"/>
                                     <ComboBoxItem Content="Bulk"/>
                                 </ComboBox>

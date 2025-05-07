@@ -30,15 +30,26 @@ namespace NutriTrack.Desktop.Services
             double goalMultiplier = input.Goal switch
             {
                 "Cut" => 0.8,
+                "Dry" => 0.85,
                 "Bulk" => 1.15,
                 _ => 1.0
             };
             Debug.WriteLine($"[LOG] Goal: {input.Goal}, Multiplier: {goalMultiplier}");
 
+            double proteinPerKg = input.BodyFat switch
+            {
+                >= 30 => 2.3,
+                >= 20 => 2.5,
+                >= 10 => 2.7,
+                < 10 => 3.0,
+                _ => 2.5
+            };
+            Debug.WriteLine($"[LOG] Protein per kg LBM: {proteinPerKg}");
+
             tdee *= goalMultiplier;
             Debug.WriteLine($"[LOG] Final TDEE: {tdee:F2} kcal");
 
-            double protein = leanMass * 2.2;
+            double protein = leanMass * proteinPerKg;
             double fat = leanMass * 0.8;
             double proteinKcal = protein * 4;
             double fatKcal = fat * 9;
