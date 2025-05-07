@@ -1,5 +1,4 @@
 ﻿using NutriTrack.Desktop.Models;
-using System.Diagnostics;
 
 namespace NutriTrack.Desktop.Services
 {
