@@ -7,159 +7,158 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Height="620" Width="1000">
+        Height="540" Width="940">
 
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
 
-    <Border Style="{StaticResource WindowBorder}" Margin="20">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Border Style="{StaticResource WindowBorder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-
-            <Button Content="X"
-                        Width="32"
-                        Height="32"
-                        FontSize="14"
+                <Button Content="X"
+                        Width="22"
+                        Height="22"
+                        FontSize="18"
                         FontWeight="Bold"
                         Background="Transparent"
                         BorderThickness="0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Right"
+                        Margin="10"
                         Foreground="{StaticResource TextSecondaryBrush}"
                         Cursor="Hand"
-                        DockPanel.Dock="Right"
                         Click="Close_Click"/>
 
-            <Grid Grid.Row="1" Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.4*"/>
-                    <ColumnDefinition Width="0.6*"/>
-                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="650*"/>
+                        <ColumnDefinition Width="290*"/>
+                    </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,20,0" VerticalAlignment="Top">
-                    <Border Style="{StaticResource Card}" Height="auto" Margin="20,0,0,20">
-                        <StackPanel>
-                            
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,10">
-                                    <TextBlock Text="Weight (kg)" Style="{StaticResource InputLabel}"/>
-                                    <TextBox Text="{Binding WeightInput}" Style="{StaticResource InputField}"/>
-                                </StackPanel>
-
-                                <StackPanel Grid.Column="1" Grid.Row="0" Margin="10,0,0,10">
-                                    <TextBlock Text="Height (cm)" Style="{StaticResource InputLabel}"/>
-                                    <TextBox Text="{Binding HeightInput}" Style="{StaticResource InputField}"/>
-                                </StackPanel>
-
-                                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">
-                                    <TextBlock Text="Age" Style="{StaticResource InputLabel}"/>
-                                    <TextBox Text="{Binding AgeInput}" Style="{StaticResource InputField}"/>
-                                </StackPanel>
-
-                                <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,0,0,0">
-                                    <TextBlock Text="Body Fat (%)" Style="{StaticResource InputLabel}"/>
-                                    <TextBox Text="{Binding BodyFatInput}" Style="{StaticResource InputField}"/>
-                                </StackPanel>
-                            </Grid>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Style="{StaticResource Card}" Height="auto" Margin="20,0,0,20">
-                        <StackPanel>
-                            
-                            <StackPanel Margin="0,0,0,15">
-                                <TextBlock Text="Gender" Style="{StaticResource InputLabel}"/>
-                                <ComboBox SelectedValue="{Binding Gender}" SelectedValuePath="Content">
-                                    <ComboBoxItem Content="Male"/>
-                                    <ComboBoxItem Content="Female"/>
-                                </ComboBox>
-                            </StackPanel>
-
-                            <StackPanel Margin="0,0,0,15">
-                                <TextBlock Text="Goal" Style="{StaticResource InputLabel}"/>
-                                <ComboBox SelectedValue="{Binding Goal}" SelectedValuePath="Content">
-                                    <ComboBoxItem Content="Cut"/>
-                                    <ComboBoxItem Content="Dry"/>
-                                    <ComboBoxItem Content="Maintain"/>
-                                    <ComboBoxItem Content="Bulk"/>
-                                </ComboBox>
-                            </StackPanel>
-
+                    <StackPanel Grid.Column="0" VerticalAlignment="Top" Height="485">
+                        <Border Style="{StaticResource Card}" Margin="0,0,0,15" Height="210" Width="600">
                             <StackPanel>
-                                <TextBlock Text="Activity Level" Style="{StaticResource InputLabel}"/>
-                                <ComboBox SelectedValue="{Binding ActivityLevel}" SelectedValuePath="Content">
-                                    <ComboBoxItem Content="Low"/>
-                                    <ComboBoxItem Content="Light"/>
-                                    <ComboBoxItem Content="Moderate"/>
-                                    <ComboBoxItem Content="High"/>
-                                    <ComboBoxItem Content="Very High"/>
-                                </ComboBox>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,10">
+                                        <TextBlock Text="Weight (kg)" Style="{StaticResource InputLabel}"/>
+                                        <TextBox Text="{Binding WeightInput}" Style="{StaticResource InputField}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Grid.Row="0" Margin="10,0,0,10">
+                                        <TextBlock Text="Height (cm)" Style="{StaticResource InputLabel}"/>
+                                        <TextBox Text="{Binding HeightInput}" Style="{StaticResource InputField}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">
+                                        <TextBlock Text="Age" Style="{StaticResource InputLabel}"/>
+                                        <TextBox Text="{Binding AgeInput}" Style="{StaticResource InputField}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,0,0,0">
+                                        <TextBlock Text="Body Fat (%)" Style="{StaticResource InputLabel}"/>
+                                        <TextBox Text="{Binding BodyFatInput}" Style="{StaticResource InputField}"/>
+                                    </StackPanel>
+                                </Grid>
+
                             </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
+                        </Border>
 
-                <StackPanel Grid.Column="1" VerticalAlignment="Top">
-
-                    <Border Style="{StaticResource Card}" Margin="0,0,20,0">
-                        <StackPanel>
-
-                            <Border CornerRadius="12" Background="#252531" Padding="20" Margin="0,0,0,20">
-                                <StackPanel>
-                                    <TextBlock Text="Daily Calories" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}"/>
-                                    <TextBlock Text="{Binding CaloriesText}" FontSize="32" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" HorizontalAlignment="Center"/>
+                        <Border Style="{StaticResource Card}" Margin="0,0,0,20" Height="240" Width="600">
+                            <StackPanel>
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock Text="Gender" Style="{StaticResource InputLabel}"/>
+                                    <ComboBox SelectedValue="{Binding Gender}" SelectedValuePath="Content">
+                                        <ComboBoxItem Content="Male"/>
+                                        <ComboBoxItem Content="Female"/>
+                                    </ComboBox>
                                 </StackPanel>
-                            </Border>
 
-                            <TextBlock Text="Macronutrients" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,10"/>
-                            <UniformGrid Columns="3" Margin="0,0,0,20">
-                                <Border Style="{StaticResource MetricCard}">
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding ProteinText}" FontSize="24" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Protein" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                                <Border Style="{StaticResource MetricCard}">
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding CarbsText}" FontSize="24" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Carbs" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                                <Border Style="{StaticResource MetricCard}">
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding FatText}" FontSize="24" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Fat" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                            </UniformGrid>
+                                <StackPanel Margin="0,0,0,15">
+                                    <TextBlock Text="Goal" Style="{StaticResource InputLabel}"/>
+                                    <ComboBox SelectedValue="{Binding Goal}" SelectedValuePath="Content">
+                                        <ComboBoxItem Content="Cut"/>
+                                        <ComboBoxItem Content="Dry"/>
+                                        <ComboBoxItem Content="Maintain"/>
+                                        <ComboBoxItem Content="Bulk"/>
+                                    </ComboBox>
+                                </StackPanel>
 
-                            <TextBlock Text="Ideal Weight" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,10"/>
-                            <Border CornerRadius="12" Background="#252531" Padding="20">
-                                <TextBlock Text="{Binding NormalWeightText}" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource PrimaryBrush}" HorizontalAlignment="Center"/>
-                            </Border>
-                            <Button Content="CALCULATE"
-        Style="{StaticResource PrimaryButton}"
-        Command="{Binding CalculateCommand}"
-        FontSize="16"
-        Margin="0,20,0,0"/>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Activity Level" Style="{StaticResource InputLabel}"/>
+                                    <ComboBox SelectedValue="{Binding ActivityLevel}" SelectedValuePath="Content">
+                                        <ComboBoxItem Content="Low"/>
+                                        <ComboBoxItem Content="Light"/>
+                                        <ComboBoxItem Content="Moderate"/>
+                                        <ComboBoxItem Content="High"/>
+                                        <ComboBoxItem Content="Very High"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="472">
+                        <Border Style="{StaticResource Card}" Margin="0,0,20,0" Height="472">
+                            <StackPanel>
+                                <Border CornerRadius="12" Background="#F0F3F7" Padding="20" Margin="0,0,0,20">
+                                    <StackPanel>
+                                        <TextBlock Text="Daily Calories" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}"/>
+                                        <TextBlock Text="{Binding CaloriesText}" FontSize="32" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <TextBlock Text="Macronutrients" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,10"/>
+                                <UniformGrid Columns="3" Margin="0,0,0,20">
+                                    <Border Style="{StaticResource MetricCard}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding ProteinText}" FontSize="20" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="Protein" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource MetricCard}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding CarbsText}" FontSize="20" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="Carbs" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource MetricCard}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding FatText}" FontSize="20" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="Fat" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                </UniformGrid>
+
+                                <TextBlock Text="Ideal Weight" FontSize="12" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,10"/>
+                                <Border CornerRadius="12" Background="#F0F3F7" Padding="20">
+                                    <TextBlock Text="{Binding NormalWeightText}" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource PrimaryBrush}" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <Button Content="CALCULATE"
+                                        Style="{StaticResource PrimaryButton}"
+                                        Command="{Binding CalculateCommand}"
+                                        FontSize="16"
+                                        Margin="0,20,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
             </Grid>
-        </Grid>
-    </Border>
+        </Border>
+    </Grid>
 </Window>
