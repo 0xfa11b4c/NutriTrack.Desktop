@@ -56,22 +56,22 @@
 
                                     <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,10">
                                         <TextBlock Text="Weight (kg)" Style="{StaticResource InputLabel}"/>
-                                        <TextBox Text="{Binding WeightInput}" Style="{StaticResource InputField}"/>
+                                        <TextBox Text="{Binding WeightInput}" Style="{StaticResource InputField}" MaxLength="3"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" Grid.Row="0" Margin="10,0,0,10">
                                         <TextBlock Text="Height (cm)" Style="{StaticResource InputLabel}"/>
-                                        <TextBox Text="{Binding HeightInput}" Style="{StaticResource InputField}"/>
+                                        <TextBox Text="{Binding HeightInput}" Style="{StaticResource InputField}" MaxLength="3"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">
                                         <TextBlock Text="Age" Style="{StaticResource InputLabel}"/>
-                                        <TextBox Text="{Binding AgeInput}" Style="{StaticResource InputField}"/>
+                                        <TextBox Text="{Binding AgeInput}" Style="{StaticResource InputField}" MaxLength="2"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" Grid.Row="1" Margin="10,0,0,0">
                                         <TextBlock Text="Body Fat (%)" Style="{StaticResource InputLabel}"/>
-                                        <TextBox Text="{Binding BodyFatInput}" Style="{StaticResource InputField}"/>
+                                        <TextBox Text="{Binding BodyFatInput}" Style="{StaticResource InputField}" MaxLength="2"/>
                                     </StackPanel>
                                 </Grid>
 
