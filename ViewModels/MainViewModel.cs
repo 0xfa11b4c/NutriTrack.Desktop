@@ -60,9 +60,9 @@ namespace NutriTrack.Desktop.ViewModels
                 : (height - 100) * 0.9;
 
             CaloriesText = $"{result.Calories:F0} kcal";
-            ProteinText = $"{result.Protein:F0} g";
-            FatText = $"{result.Fat:F0} g";
-            CarbsText = $"{result.Carbs:F0} g";
+            ProteinText = $"{result.Protein:F0}g";
+            FatText = $"{result.Fat:F0}g";
+            CarbsText = $"{result.Carbs:F0}g";
             NormalWeightText = $"{normalWeight:F1} kg";
         }
 
