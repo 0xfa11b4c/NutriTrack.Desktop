@@ -10,15 +10,16 @@
 </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="views\MainView.xaml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ViewModels\ChooseViewModel.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
   </ItemGroup>
 
 </Project>

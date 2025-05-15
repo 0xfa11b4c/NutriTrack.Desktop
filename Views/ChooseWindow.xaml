@@ -1,0 +1,65 @@
+﻿<Window x:Class="NutriTrack.Desktop.Views.ChooseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:NutriTrack.Desktop.ViewModels"
+        Title="NutriTrack"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Height="600" Width="940"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <Window.DataContext>
+        <vm:ChooseViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="20">
+        <Border Style="{StaticResource WindowBorder}">
+            <Grid Margin="20">
+                <!-- Шаг 1: Выбор пола -->
+                <StackPanel x:Name="Step1Panel" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Выберите ваш пол" FontSize="20" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Мужчина" Width="100" Margin="5" Click="Male_Click"/>
+                        <Button Content="Женщина" Width="100" Margin="5" Click="Female_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Шаг 2: Физические данные -->
+                <StackPanel x:Name="Step2Panel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Введите физические данные" FontSize="20" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Рост (см)" />
+                    <TextBox x:Name="HeightBox" Width="200" Margin="0 0 0 10"/>
+
+                    <TextBlock Text="Вес (кг)" />
+                    <TextBox x:Name="WeightBox" Width="200" Margin="0 0 0 10"/>
+
+                    <TextBlock Text="Возраст" />
+                    <TextBox x:Name="AgeBox" Width="200" Margin="0 0 0 10"/>
+
+                    <TextBlock Text="Процент жира (опц.)" />
+                    <TextBox x:Name="FatBox" Width="200" Margin="0 0 0 20"/>
+
+                    <Button Content="Продолжить" Width="150" Click="Continue_Click"/>
+                </StackPanel>
+
+                <!-- Шаг 3: Цель -->
+                <StackPanel x:Name="Step3Panel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Выберите цель" FontSize="20" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+                    <WrapPanel HorizontalAlignment="Center">
+                        <Button Content="Похудеть" Tag="Cut" Click="Goal_Click" Margin="5" Width="110" Height="70"/>
+                        <Button Content="Поддерживать" Tag="Maintain" Click="Goal_Click" Margin="5" Width="110" Height="70"/>
+                        <Button Content="Набрать массу" Tag="Bulk" Click="Goal_Click" Margin="5" Width="110" Height="70"/>
+                        <Button Content="Соревнования" Tag="Dry" Click="Goal_Click" Margin="5" Width="110" Height="70"/>
+                        <Button Content="Мед. коррекция" Tag="Medical" Click="Goal_Click" Margin="5" Width="110" Height="70"/>
+                    </WrapPanel>
+
+                    <Button Content="Завершить" Width="150" Margin="20" Click="OpenMain_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

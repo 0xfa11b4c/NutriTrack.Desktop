@@ -7,7 +7,6 @@ namespace NutriTrack.Desktop.Services
         public NutritionEntry Calculate(NutritionEntry input)
         {
             double leanMass = input.Weight * (1 - input.BodyFat / 100);
-
             double bmr = 370 + (21.6 * leanMass);
 
             double activityFactor = input.Activity switch

@@ -1,8 +1,8 @@
-﻿using System.Windows.Input;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NutriTrack.Desktop.Models;
 using NutriTrack.Desktop.Services;
+using System.Windows.Input;
 
 namespace NutriTrack.Desktop.ViewModels
 {
@@ -13,7 +13,7 @@ namespace NutriTrack.Desktop.ViewModels
         [ObservableProperty] private string _ageInput = "";
         [ObservableProperty] private string _bodyFatInput = "";
 
-        [ObservableProperty] private string _gender = "Male";
+        [ObservableProperty] private string _gender = NutritionEntry.SelectedGender;
         [ObservableProperty] private string _goal = "Maintain";
         [ObservableProperty] private string _activityLevel = "Moderate";
 

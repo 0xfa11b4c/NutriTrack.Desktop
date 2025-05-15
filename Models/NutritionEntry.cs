@@ -6,7 +6,7 @@
         public double Height { get; set; }
         public int Age { get; set; }
         public double BodyFat { get; set; }
-
+        public static string SelectedGender { get; set; } = "Male";
         public string Gender { get; set; } = "Male";
         public string Goal { get; set; } = "Maintain";
         public string Activity { get; set; } = "Moderate";
