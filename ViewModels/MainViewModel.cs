@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using NutriTrack.Desktop.Core;
 using NutriTrack.Desktop.Models;
 using NutriTrack.Desktop.Services;
 using System.Windows.Input;
@@ -27,6 +28,17 @@ namespace NutriTrack.Desktop.ViewModels
 
         public MainViewModel()
         {
+            if (AppState.CurrentEntry is NutritionEntry entry)
+            {
+                WeightInput = entry.Weight.ToString();
+                HeightInput = entry.Height.ToString();
+                AgeInput = entry.Age.ToString();
+                BodyFatInput = entry.BodyFat.ToString();
+                Gender = entry.Gender;
+                Goal = entry.Goal;
+                ActivityLevel = entry.Activity;
+            }
+
             CalculateCommand = new RelayCommand(Calculate);
         }
 
@@ -63,12 +75,12 @@ namespace NutriTrack.Desktop.ViewModels
             ProteinText = $"{result.Protein:F0}g";
             FatText = $"{result.Fat:F0}g";
             CarbsText = $"{result.Carbs:F0}g";
-            NormalWeightText = $"{normalWeight:F1} kg";
+            NormalWeightText = $"{normalWeight:F1} кг";
         }
 
         private void SetError()
         {
-            CaloriesText = ProteinText = FatText = CarbsText = NormalWeightText = "Error";
+            CaloriesText = ProteinText = FatText = CarbsText = NormalWeightText = "Ошибка";
         }
     }
 }

@@ -11,6 +11,9 @@
         public string Goal { get; set; } = "Maintain";
         public string Activity { get; set; } = "Moderate";
 
+        public List<string> Allergies { get; set; } = new();
+        public List<string> Conditions { get; set; } = new();
+
         public double Calories { get; set; }
         public double Protein { get; set; }
         public double Fat { get; set; }
