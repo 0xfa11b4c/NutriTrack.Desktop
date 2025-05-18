@@ -16,21 +16,14 @@ namespace NutriTrack.Desktop.Views
 
         private void OpenMealPlan_Click(object sender, RoutedEventArgs e)
         {
-            /*var mealWindow = new MealPlanWindow();
+            var mealWindow = new MealPlanWindow();
             mealWindow.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void GoToDashboard_Click(object sender, RoutedEventArgs e)
         {
             // Уже на главной — ничего не делаем
-        }
-
-        private void OpenMealPlan_Click(object sender, RoutedEventArgs e)
-        {
-            var mealWindow = new MealPlanWindow();
-            mealWindow.Show();
-            this.Close();
         }
 
         private void OpenExercise_Click(object sender, RoutedEventArgs e)

@@ -240,7 +240,7 @@
                                         FontSize="14"/>
 
                                 <Button Content="Перейти к рациону"
-                                        Margin="10,10,0,0"
+                                        Margin="0,10,0,0"
                                         Style="{StaticResource PrimaryButton}"
                                         FontSize="14"
                                         Click="OpenMealPlan_Click"/>

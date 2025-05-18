@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace NutriTrack.Desktop.Views
+{
+    public partial class ExerciseWindow : Window
+    {
+        public ExerciseWindow()
+        {
+            InitializeComponent();
+        }
+    }
+}
